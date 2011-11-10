@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<!-- JPA "unit" -->
+	<persistence-unit name="jpaunit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<non-jta-data-soure>MySqlDS</non-jta-data-soure>
+		
+		<!-- Pojo Begin -->
+		<class>sns.client.pojo.UserInfo</class>
+		<!-- pojo End -->
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://127.0.0.1:3306/elt?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="admin" />
+			<property name="hibernate.connection.pool_size" value="2" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hiberante.cache_provider" value="org.hibernate.cache.NoCacheProvider" />
+
+			<property name="hibernate.connection.autocommit" value="true" />
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="false" />
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="false" />
+
+			
+		</properties>
+	</persistence-unit>
+<persistence-unit name="db-manager" transaction-type="RESOURCE_LOCAL">
+</persistence-unit>
+</persistence>

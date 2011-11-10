@@ -1,0 +1,2 @@
+serviceClass: sns.client.GreetingService
+path: 2DAAFFA9B04A3B71BBEA2284123EDC8D.gwt.rpc
